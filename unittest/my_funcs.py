@@ -8,10 +8,31 @@ def is_even(n):
     return n % 2 == 0
 
 def average(lst):
+    if not lst:
+        raise ValueError("빈 리스트입니다")
     return sum(lst) / len(lst)
 
 def max_value(lst):
-    return max(lst)
+    if not lst:
+        raise ValueError("빈 리스트입니다")
+
+    max_val = lst[0]
+
+    for num in lst:
+        if num > max_val:
+            max_val = num
+
+    return max_val
+
 
 def min_value(lst):
-    return min(lst)
+    if not lst:
+        raise ValueError("빈 리스트입니다")
+
+    min_val = lst[0]
+
+    for num in lst:
+        if num < min_val:
+            min_val = num
+
+    return min_val
